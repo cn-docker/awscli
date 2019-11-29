@@ -2,7 +2,8 @@ FROM python:3-alpine
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # Install dependencies
-RUN apk add groff less
+RUN apk add --update groff less && \
+    rm -rf /var/cache/apk/*
 
 # Install AWS Cli
 RUN pip install awscli --upgrade
