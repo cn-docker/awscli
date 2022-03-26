@@ -7,7 +7,7 @@ RUN apk add ---no-cache --update groff less && \
 
 # Install dependencies
 COPY requirements.txt .
-RUN RUN pip install --no-cache-dir --requirement requirements.txt && \
+RUN pip install --no-cache-dir --requirement requirements.txt && \
     rm -rf ~/.cache/pip
 
 # Setup entrypoint
