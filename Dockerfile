@@ -5,8 +5,9 @@ LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 RUN apk add ---no-cache --update groff less && \
     rm -rf /var/cache/apk/*
 
-# Install AWS Cli
-RUN pip install --no-cache-dir --upgrade awscliv2==2.0.2 && \
+# Install dependencies
+COPY requirements.txt .
+RUN RUN pip install --no-cache-dir --requirement requirements.txt && \
     rm -rf ~/.cache/pip
 
 # Setup entrypoint
