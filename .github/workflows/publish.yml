@@ -40,5 +40,5 @@ jobs:
         uses: peter-evans/dockerhub-description@v3
         with:
           repository: ${{ secrets.DOCKER_ORGANIZATION }}/${{ secrets.DOCKER_IMAGE_NAME }}
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
