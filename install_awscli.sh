@@ -8,13 +8,13 @@ echo "Building and installing AWS Cli version 2"
 echo "========================================="
 
 echo "--> Install AWS Cli build dependencies as a virtual package"
-apk add --no-cache --virtual .aws-cli-build-deps git build-base libffi-dev cmake python3 py3-pip python3-dev gcompat
+apk add --no-cache --virtual .awscli-build-deps git build-base libffi-dev cmake python3 py3-pip python3-dev gcompat
 
 echo "--> Clone the AWS Cli repository"
 git clone --single-branch --depth 1 -b ${AWS_CLI_VERSION} https://github.com/aws/aws-cli.git
 
 echo "--> cd into the cloned repository"
-cd aws-cli
+cd awscli
 
 echo "--> Start a Pyhon virtual environment"
 python -m venv venv
@@ -24,11 +24,11 @@ echo "--> Build AWS Cli"
 scripts/installers/make-exe
 
 echo "--> Install AWS Cli"
-unzip -q dist/aws-cli-exe.zip
+unzip -q dist/awscli-exe.zip
 aws/install
 
 echo "--> Remove cloned repository"
-rm -rf aws-cli
+rm -rf awscli
 
 echo "--> Delete virtual package with AWS Cli build dependencies"
-apk del .aws-cli-build-deps
+apk del .awscli-build-deps
