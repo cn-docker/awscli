@@ -35,5 +35,4 @@ RUN unzip -q /tmp/awscli.zip -d /tmp && \
     rm -rf /tmp/aws /tmp/awscli.zip
 
 # Setup entrypoint
-COPY entrypoint.sh /usr/local/bin
-ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
+ENTRYPOINT ["/usr/local/bin/aws"]
