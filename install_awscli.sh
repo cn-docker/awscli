@@ -11,7 +11,7 @@ echo "--> Install AWS Cli build dependencies as a virtual package"
 apk add --no-cache --virtual .awscli-build-deps git build-base libffi-dev cmake python3 py3-pip python3-dev gcompat
 
 echo "--> Clone the AWS Cli repository"
-git clone --single-branch --depth 1 -b ${AWS_CLI_VERSION} https://github.com/aws/aws-cli.git
+git clone --single-branch --depth 1 -b ${AWS_CLI_VERSION} https://github.com/aws/aws-cli.git awscli
 
 echo "--> cd into the cloned repository"
 cd awscli
