@@ -29,7 +29,7 @@ RUN apk add --no-cache --update bash groff less jq yq
 # Copy AWS Cli zip file
 COPY --from=BUILD /tmp/awscli/dist/awscli-exe.zip /tmp/awscli.zip
 
-# # Install AWS Cli
+# Install AWS Cli
 RUN unzip -q /tmp/awscli.zip -d /tmp && \
     /tmp/aws/install && \
     rm -rf /tmp/aws /tmp/awscli.zip
