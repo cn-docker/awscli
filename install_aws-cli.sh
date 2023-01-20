@@ -24,7 +24,7 @@ echo "--> Build AWS Cli"
 scripts/installers/make-exe
 
 echo "--> Install AWS Cli"
-unzip -q dist/awscli-exe.zip
+unzip -q dist/aws-cli-exe.zip
 aws/install
 
 echo "--> Remove cloned repository"
