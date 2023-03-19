@@ -6,11 +6,11 @@ FROM alpine:3.17.2 AS BUILD
 # renovate: datasource=github-tags depName=aws/aws-cli
 ARG AWS_CLI_VERSION=2.9.16
 
-WORKDIR /tmp
-
 # Install dependencies
 RUN apk add --no-cache --update git build-base libffi-dev cmake python3 py3-pip python3-dev gcompat
 
+# Build AWS Cli
+WORKDIR /tmp
 RUN git clone --single-branch --depth 1 -b ${AWS_CLI_VERSION} https://github.com/aws/aws-cli.git awscli && \
     cd awscli && \
     python -m venv venv && \
