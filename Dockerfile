@@ -1,7 +1,7 @@
 ###############################################################################
 # Build AWS Cli
 ###############################################################################
-FROM alpine:3.17.2 AS BUILD
+FROM alpine:3.17.3 AS BUILD
 
 # renovate: datasource=github-tags depName=aws/aws-cli
 ARG AWS_CLI_VERSION=2.9.16
@@ -20,7 +20,7 @@ RUN git clone --single-branch --depth 1 -b ${AWS_CLI_VERSION} https://github.com
 ###############################################################################
 # AWS Cli Docker Image
 ###############################################################################
-FROM alpine:3.17.2
+FROM alpine:3.17.3
 LABEL maintainer="Julian Nonino <noninojulian@gmail.com>"
 
 # Install dependencies
