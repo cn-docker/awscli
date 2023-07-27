@@ -3,7 +3,8 @@
 ###############################################################################
 FROM alpine:3.18.2 AS BUILD
 
-ARG AWS_CLI_VERSION=2.9.16 # renovate: datasource=github-tags depName=aws/aws-cli
+# renovate: datasource=github-tags depName=aws/aws-cli extractVersion=(?<version>.*)$
+ARG AWS_CLI_VERSION=2.9.16
 
 # Install dependencies
 RUN apk add --no-cache --update git build-base libffi-dev cmake python3 py3-pip python3-dev gcompat
